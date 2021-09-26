@@ -40,5 +40,4 @@ weeks_elapsed(3,20)
 #Chương 3 bài 9 
 def square(num):
   return num*3
-square(3)
-print ("Hello world")
+square(3) 
