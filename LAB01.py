@@ -41,3 +41,4 @@ weeks_elapsed(3,20)
 def square(num):
   return num*3
 square(3)
+print ("Hello world")
