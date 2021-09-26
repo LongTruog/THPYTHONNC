@@ -151,3 +151,178 @@ print('units[-2][-2:]: ', units[-2][-2:])
 #11f The list ['kg', 'pound']
 print('units[-1][:-1]: ', units[-1][0:-1])
 print("--------/////--------")
+# Chương 9
+# Câu 1
+#1 for loop to print all the values
+celegans_phenotypes =  ['Emb','Him', 'Unc', 'Lon', 'Dpy', 'Sma']
+print(celegans_phenotypes)
+for phenotype in celegans_phenotypes:
+    print(phenotype)
+print("--------/////--------")
+# Câu 2
+#2 print all on a single line
+half_lives = [87.74, 24110.0, 6537.0, 14.4, 376000.0]
+for value in half_lives:
+    print(value, end=' ')
+print("--------/////--------")
+# Câu 3
+#3 add values + 1  of whales to more_whales
+whales = [5, 4, 7, 3, 2, 3, 2, 6, 4, 2, 1, 7, 1, 3]
+print('whales: ', whales)
+more_whales = []
+for count in whales:
+    more_whales.append(count + 1)
+print('more_whales: ', more_whales)
+print("--------/////--------")
+# Câu 4
+#4a Create a nested list 
+alkaline_earth_metals = [[4, 9.012], [12, 24.305],
+[20, 40.078], [38, 87.62],[56, 137.327], [88, 226]]
+print(alkaline_earth_metals)
+#4b for loop to print all the values
+for element in alkaline_earth_metals:
+    print('atomic number: ', element[0])
+    print('atomic weight: ', element[1])
+    print('')
+#4c  not nested
+number_and_weight = []
+for element in alkaline_earth_metals:
+    number_and_weight.append(element[0])
+    number_and_weight.append(element[1])
+print('number_and_weight: ', number_and_weight)
+print("--------/////--------")
+# Câu 5
+#5  add  a docstring, type annotations, or comments
+def mystery_function(values):
+    """ Trả về một bản sao có các danh sách con.
+    Phần từ trong danh sách con được đảo ngược
+    >>> mystery_function([[1,2,3], [4,5,6]])
+    [[3,2,1],[4,5,6]
+     """
+    result = []
+    for sublist in values:
+        result.append([sublist[0]]) # result = [[1]] 
+        for i in sublist[1:]: # lan 1: i = 2,3  / lan 2: i = 5,6  
+            result[-1].insert(0, i) 
+            # them i vao truoc.
+            # Lan 1. result[-1] = [1]
+            # Lan 2. result[-1] = [4]
+    return result
+print( mystery_function([[1, 2, 3], [4, 5, 6]]))
+print("--------/////--------")
+# Câu 6
+#6 type quit (any capitalization) to exit
+text = ""
+while text.lower() != "quit":
+    text = input("Please type quit (any capitalization) to exit: ")
+    if text.lower() == "quit":
+        print("Exited program")
+print("--------/////--------")
+# Câu 7 
+#7 add the population of the current country to total
+country_populations = [1295, 23, 7, 3, 47, 21]
+total = 0
+for population in country_populations:
+    total += population
+print('total population = ', total)
+print("--------/////--------")
+# Câu 8 
+#8
+rat_1 = [2,1,3,4,7,6,2,3,5,8]
+rat_2 = [1,3,2,2,6,8,4,2,2,9]
+#8a
+if rat_1[0] > rat_2[0]:
+    print("Rat 1 weighed more than rat 2 on day 1.")
+else:
+    print("Rat 1 weighed less than rat 2 on day 1.")
+#8b
+if rat_1[0] > rat_2[0] and rat_1[-1] > rat_2[-1]:
+    print("Rat 1 remained heavier than Rat 2.")
+else:
+    print("Rat 2 became heavier than Rat 1.")
+#8c
+if rat_1[0] > rat_2[0]:
+    if rat_1[-1] > rat_2[-1]:
+        print("Rat 1 remained heavier than Rat 2.")
+    else:
+        print("Rat 2 became heavier than Rat 1.")
+else:
+    print("Rat 1 weighed less than rat 2 on day 1.")
+print("--------/////--------")
+# Câu 9
+#9  Print the numbers in the range 33 to 49 (inclusive)
+for number in range(33, 50):
+    print(number)
+print("--------/////--------")
+# Câu 10 
+#10 Print the numbers from 1 to 10 (inclusive) in descending order, all on one line.
+for number in range(10):
+    print(10 - number, end=' ')
+print('')
+print("--------/////--------")
+# Câu 11
+#11
+sum = 0
+count = 0
+for number in range(2,23):
+    sum += number
+    count += 1
+average = sum / count
+print('sum = ', sum)
+print('count = ', count)
+print('average = ', average)
+print("--------/////--------")
+# Câu 12
+#12 Rewrite the code 
+def remove_neg(num_list):
+    index = 0
+    while index < len(num_list):
+        if num_list[index] < 0:
+            num_list.remove(num_list[index])
+        else:
+            index += 1
+num_list = [1, 2, 3, -3, 6, -1, -3, 1]
+remove_neg(num_list)
+print(num_list)
+
+
+print("--------/////--------")
+# Câu 13
+#13 a right triangle
+for width in range(1, 8):
+    print('T' * width)
+print("--------/////--------")
+# Câu 14
+#14 a right triangle with s hypotenuse on the left side
+for width in range(1, 8):
+    print(' '*(7 - width), 'T'* width) 
+    print(' '*(7 - width), 'T'* width)
+
+print("--------/////--------")
+# Câu 15
+#15 Redo the previous two exercises using while loops instead of for loops.
+width1 = 1
+while width1 < 8:
+    print('T' * width1)
+    width1 += 1
+
+width2 = 1
+while width2 < 8:
+    print(' '*(7 - width2), 'T'*width2)
+    width2 += 1
+
+print("--------/////--------")
+# Câu 16
+rat_1_weight = [2,1,1,4,5,7,2,3,5,8];
+rat_2_weight = [2,1,1,4,6,6,4,2,2,9];
+#16a how many weeks the weight of the first rat to become 25 percent heavier 
+week = 0
+while rat_1_weight[week] / rat_1_weight[0] - 1 < .25:
+    week += 1
+print(week)
+#16b  how many weeks it would take for rat 1 to be 10 percent heavier than rat 2
+week = 0
+while rat_1_weight[week] / rat_2_weight[week] - 1 < .10:
+    week += 1
+print(week) 
+print("--------/////--------")
